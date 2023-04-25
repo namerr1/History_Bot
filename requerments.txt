@@ -1,0 +1,6 @@
+vk_api
+random
+json
+pymorphy2
+wikipedia
+sqlite3
