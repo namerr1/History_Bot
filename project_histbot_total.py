@@ -64,7 +64,8 @@ def main():
                         photo_id = photo[0]['id']
                         access_key = photo[0]['access_key']
                         attachment = f'photo{owner_id}_{photo_id}_{access_key}'
-                        vk.messages.send(peer_id=730431687, random_id=random.randint(0, 2 ** 64),
+                        print(photo)
+                        vk.messages.send(peer_id=event.obj.message['peer_id'], random_id=random.randint(0, 2 ** 64),
                                          attachment=attachment)
                     con.close()
                     j = True
@@ -107,7 +108,7 @@ def main():
                                     photo_id = photo[0]['id']
                                     access_key = photo[0]['access_key']
                                     attachment = f'photo{owner_id}_{photo_id}_{access_key}'
-                                    vk.messages.send(peer_id=730431687, random_id=random.randint(0, 2 ** 64),
+                                    vk.messages.send(peer_id=event.obj.message['peer_id'], random_id=random.randint(0, 2 ** 64),
                                                      attachment=attachment)
                                 con.close()
                                 ind = date.index(a)
