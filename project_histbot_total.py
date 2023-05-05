@@ -70,8 +70,13 @@ def main():
                     con.close()
                     j = True
                     if len(date) > 0:
-                       ind = date.index(a)
-                       del date[ind]
+                        if a in date:
+                           ind = date.index(a)
+                           del date[ind]
+                        else:
+                            ind = date.index(a)
+                            del date[ind]
+
                     else:
                         if not(zav):
                             vk.messages.send(user_id=event.obj.message['from_id'],
@@ -111,8 +116,13 @@ def main():
                                     vk.messages.send(peer_id=event.obj.message['peer_id'], random_id=random.randint(0, 2 ** 64),
                                                      attachment=attachment)
                                 con.close()
-                                ind = date.index(a)
-                                del date[ind]
+                                if len(date) > 0:
+                                    if a in date:
+                                        ind = date.index(a)
+                                        del date[ind]
+                                    else:
+                                        ind = date.index(a)
+                                        del date[ind]
                                 print(a)
                                 j = True
                                 break
@@ -137,8 +147,13 @@ def main():
                             vk.messages.send(user_id=event.obj.message['from_id'],
                                              message=f"Какое событие было в {a}?",
                                              random_id=random.randint(0, 2 ** 64))
-                            ind = date.index(a)
-                            del date[ind]
+                            if len(date) > 0:
+                                if a in date:
+                                    ind = date.index(a)
+                                    del date[ind]
+                                else:
+                                    ind = date.index(a)
+                                    del date[ind]
                             print(a)
                             j = True
                         else:

@@ -1,7 +1,6 @@
-import sqlite3
+import pymorphy2
 
-con = sqlite3.connect('hist.db')
-cur = con.cursor()
-result = cur.execute(f'''SELECT name FROM books
-    WHERE id = "бунт"''').fetchall()
-print(result)
+
+morph = pymorphy2.MorphAnalyzer()
+i = morph.parse('галерея')[0].normal_form
+print(i)
