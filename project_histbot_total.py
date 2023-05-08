@@ -46,7 +46,7 @@ def main():
                 if not(j):
                     a = random.choice(date)
                 print(a)
-                if not ('событие' in event.obj.message['text']):
+                if not ('событие' in event.obj.message['text'].lower()):
 
                     vk.messages.send(user_id=event.obj.message['from_id'],
                                      message=f"Какое событие было в {a}?",
@@ -73,9 +73,6 @@ def main():
                         if a in date:
                            ind = date.index(a)
                            del date[ind]
-                        else:
-                            ind = date.index(a)
-                            del date[ind]
 
                     else:
                         if not(zav):
@@ -120,9 +117,7 @@ def main():
                                     if a in date:
                                         ind = date.index(a)
                                         del date[ind]
-                                    else:
-                                        ind = date.index(a)
-                                        del date[ind]
+
                                 print(a)
                                 j = True
                                 break
@@ -151,9 +146,7 @@ def main():
                                 if a in date:
                                     ind = date.index(a)
                                     del date[ind]
-                                else:
-                                    ind = date.index(a)
-                                    del date[ind]
+
                             print(a)
                             j = True
                         else:
